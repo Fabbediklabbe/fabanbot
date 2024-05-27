@@ -4,6 +4,11 @@ import os
 import random
 import json
 from discord.ext import commands
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -123,4 +128,4 @@ async def cs(ctx):
 	await ctx.reply (stattrak, file = discord.File (rarity_folder_path + cs_dirListing[cs_picture_to_print]))
 	#mention_author = True
 
-bot.run('ODA4MDE1NzQ5MTc1OTY3NzY0.GSTpiQ.Q8iWICP97dyfX76CM8VkLF2ZTJwgEBvyXoyEgg')
+bot.run(DISCORD_TOKEN)
